@@ -38,8 +38,8 @@ Metadata:
       GitHubBranch: 
         default: GitHub Branch Name
 Resources:
-  SiteBucket:
-    Type: AWS::S3::Bucket
+  SiteBucket:  # This bucket stores the TaskCat HTML output/dashboard
+    Type: AWS::S3::Bucket 
     DeletionPolicy: Retain
     Properties:
       AccessControl: PublicRead
@@ -191,7 +191,7 @@ Resources:
         ComputeType: BUILD_GENERAL1_SMALL
         Image: "aws/codebuild/amazonlinux2-x86_64-standard:1.0"
       Source:
-        Type: CODEPIPELINE
+        Type: CODEPIPELINE # Copy the TaskCat output and copy them to the S3 bucket we created before (SiteBucket) 
         BuildSpec: !Sub |
           version: 0.2
           phases:
@@ -255,7 +255,7 @@ Resources:
             Owner: AWS
             Version: '1'
             Provider: CodeBuild
-          OutputArtifacts: 
+          OutputArtifacts: # Output the artifacts (files/results) to be passed as InputArtifacts for CodeBuildWebsite, which will take the artifacts, and move them to S3
           - Name: TaskCatArtifacts
           Configuration:
             ProjectName:
@@ -292,7 +292,7 @@ Resources:
       ArtifactStore:
         Type: S3
         Location: !Ref PipelineBucket
-Outputs:
+Outputs: # Output links to the TaskCat dashboard and pipeline for easy access
   PipelineUrl:
     Value: !Sub https://console.aws.amazon.com/codepipeline/home?region=${AWS::Region}#/view/${Pipeline}
     Description: CodePipeline URL
