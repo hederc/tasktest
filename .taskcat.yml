@@ -6,6 +6,6 @@ project:
 tests:
   sqs-test:
     template: ./sqs.yml
-  sqs-test-two:
-    template: ./sqs-two.yml
+  # sqs-test-two:
+  #   template: ./sqs-two.yml
   

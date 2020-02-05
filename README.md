@@ -1,2 +1,0 @@
-# taskcat-example
-taskcat-example
