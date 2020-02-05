@@ -125,7 +125,7 @@ Resources: # Make bucket private
             Effect: Allow
             Resource: "*"
           Version: '2012-10-17'
-  CodeBuildSetup: # Triggers the buildspec.yml file.  Runs on linux2 container
+  CodeBuildSetup: # Triggers the buildspec-setup.yml file.  Runs on linux2 container
     Type: AWS::CodeBuild::Project
     DependsOn: CodeBuildRole
     Properties:
