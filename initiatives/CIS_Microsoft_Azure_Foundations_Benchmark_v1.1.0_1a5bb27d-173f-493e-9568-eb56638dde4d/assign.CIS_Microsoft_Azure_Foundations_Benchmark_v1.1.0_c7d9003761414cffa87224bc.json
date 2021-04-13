@@ -1,0 +1,27 @@
+{
+ "sku": {
+  "name": "A0",
+  "tier": "Free"
+ },
+ "properties": {
+  "displayName": "CIS Microsoft Azure Foundations Benchmark v1.1.0",
+  "policyDefinitionId": "/providers/Microsoft.Authorization/policySetDefinitions/1a5bb27d-173f-493e-9568-eb56638dde4d",
+  "scope": "/subscriptions/f4122767-4f74-4e66-96cc-fe9604c36ada",
+  "notScopes": [],
+  "parameters": {},
+  "metadata": {
+   "assignedBy": "Heder Guedes da Cruz",
+   "parameterScopes": {
+    "listOfRegionsWhereNetworkWatcherShouldBeEnabled": "/subscriptions/f4122767-4f74-4e66-96cc-fe9604c36ada"
+   },
+   "createdBy": "00a4583b-2b4d-4a2d-a895-0cd2b79e887f",
+   "createdOn": "2021-04-12T20:34:13.1115155Z",
+   "updatedBy": null,
+   "updatedOn": null
+  },
+  "enforcementMode": "DoNotEnforce"
+ },
+ "id": "/subscriptions/f4122767-4f74-4e66-96cc-fe9604c36ada/providers/Microsoft.Authorization/policyAssignments/c7d9003761414cffa87224bc",
+ "type": "Microsoft.Authorization/policyAssignments",
+ "name": "c7d9003761414cffa87224bc"
+}
